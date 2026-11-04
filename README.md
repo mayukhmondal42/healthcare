@@ -167,14 +167,14 @@ git clone https://github.com/mayukhmondal42/healthcare.git
 Backend:
 
 ```bash
-cd backend
+cd server
 npm install
 ```
 
 Frontend:
 
 ```bash
-cd frontend
+cd client
 npm install
 ```
 

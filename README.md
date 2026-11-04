@@ -159,7 +159,7 @@ Comprehensive frontend and backend validation with meaningful user feedback.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/ayushmanji/AI_Integration_Healthcare_System.git
+git clone https://github.com/mayukhmondal42/healthcare.git
 ```
 
 ### 2. Install Dependencies

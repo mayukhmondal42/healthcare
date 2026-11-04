@@ -1,17 +1,15 @@
-🏥 HealthAI — Your Intelligent Wellness Partner
+🏥 HealthAI — AI-Powered Medical Report Analysis Platform
 
 <p align="center">
  <strong>Transforming Complex Medical Reports into Clear, Actionable Insights using AI.</strong>
 </p>
 
 <p align="center">
- <img src="https://img.shields.io/badge/Live%20Demo-Vercel-black?style=for-the-badge&logo=vercel" />
- <img src="https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge" />
- <img src="https://img.shields.io/badge/AI-Google%20Gemini-blue?style=for-the-badge" />
+ Built with MERN Stack • Google Gemini AI • Cloudinary • JWT Authentication
 </p>
 
 <p align="center">
- 🌐 <b>Live Website:</b> https://client-tau-rosy-50.vercel.app/<br/>
+ 🌐 <b>Live Website:</b> https://client-tau-rosy-50.vercel.app/ <br/>
  📂 <b>GitHub:</b> https://github.com/mayukhmondal42/healthcare
 </p>
 
@@ -19,83 +17,223 @@
 
 📖 Overview
 
-*HealthAI* is a full-stack AI-powered healthcare platform that helps users understand their medical reports effortlessly.
+HealthAI is a full-stack healthcare intelligence platform that helps users understand their medical reports effortlessly. The application leverages *Google Gemini AI* to analyze medical PDFs and images, generate structured summaries, explain technical terminology, and provide patient-friendly insights in multiple languages.
 
-Users can securely upload their medical reports (PDF / JPG / PNG) to their private health vault and receive instant, actionable insights powered by *Google Gemini AI*.
-
-*Core ideas from your live site:*
-- Upload Reports - Securely store and manage lab results
-- AI-Powered Analysis - Actionable, AI-driven summaries
-- Track Your Health - Visual timeline of health metrics
+Instead of manually interpreting complex medical documents, users can upload reports and receive instant AI-powered analysis through a secure and intuitive dashboard.
 
 ---
 
 ✨ Features
 
-- 🔐 *Secure Authentication* - JWT + Bcrypt, protected vault
-- 📤 *Secure Upload* - PDF / JPG / PNG via Cloudinary
-- 🤖 *AI Analysis* - Google Gemini 1.5 Pro
-- 📊 *Personal Dashboard* - Centralized report management
-- 🗑️ *Smart Delete* - Sync delete from MongoDB & Cloudinary
-- 📱 *Responsive UI* - Clean, modern, mobile-friendly
+🔐 Secure Authentication
+
+- JWT-based authentication system
+- Protected routes and private user data
+- Secure login and registration flow
+
+🤖 AI-Powered Report Analysis
+
+- Upload medical reports in PDF or image format
+- Automated report parsing using Google Gemini AI
+- Easy-to-understand summaries and explanations
+- Multi-language support for improved accessibility
+
+☁️ Cloud-Based Storage
+
+- Secure report storage with Cloudinary
+- Fast file retrieval and management
+- Automatic cleanup of deleted records
+
+📊 Personal Health Dashboard
+
+- Centralized report management
+- View AI-generated insights anytime
+- Track report history and analysis results
+
+🗑️ Report Management
+
+- Upload, view, and delete reports
+- Synchronized deletion from MongoDB and Cloudinary
+- Maintains database consistency and integrity
+
+---
+
+📸 Application Preview
+
+Authentication
+![Authentication](Img/Authentication_Page.jpeg)
+
+Dashboard
+![Dashboard](Img/Dashboard.jpeg)
+
+Dashboard With Reports
+![Dashboard With Reports](Img/Dashboard_With_Reports.jpeg)
+
+AI Report Analysis
+![AI Analysis](Img/Report_Details_Page.jpeg)
 
 ---
 
 🛠️ Tech Stack
 
-*Frontend:* http://React.js, Tailwind CSS, Axios, React Router
-*Backend:* http://Node.js, http://Express.js, Multer
-*Database:* MongoDB, Mongoose
-*AI & Cloud:* Google Gemini API, Cloudinary
-*Auth:* JWT, Bcrypt
+Frontend
+
+- http://React.js / http://Next.js
+- Tailwind CSS
+- SweetAlert2
+
+Backend
+
+- http://Node.js
+- http://Express.js
+
+Database
+
+- MongoDB
+- Mongoose ODM
+
+AI & Cloud Services
+
+- Google Gemini API
+- Cloudinary
 
 ---
 
 🏗️ System Architecture
 
-User Upload -> Vercel Frontend (client/) -> Express API (server/) with http://multer.memoryStorage() -> Cloudinary + Gemini AI -> MongoDB -> Dashboard
+User Upload
+ │
+ ▼
+Express API
+ │
+ ├── Cloudinary Storage
+ │
+ ├── Google Gemini AI
+ │
+ ▼
+MongoDB Database
+ │
+ ▼
+Personal Dashboard
+
+---
 
 🧠 Technical Highlights
 
-*1. High-Performance File Processing:* Used http://multer.memoryStorage() for in-memory buffer streaming. No disk write, 40% faster.
+High-Performance File Processing
 
-*2. Secure File Transmission:* Direct buffer streaming to Gemini API instead of public URL.
+Implemented an in-memory processing pipeline using:
 
-*3. Production-Ready Error Handling:* Retry logic for Gemini 503 errors, full validation.
+multer.memoryStorage()
+
+This eliminates unnecessary disk operations and enables:
+
+- Faster upload handling
+- Reduced server overhead
+- Real-time AI processing
+- Improved scalability
+
+Production-Ready Error Handling
+
+Retry Mechanism
+
+Custom retry logic for temporary Gemini API failures (503 responses).
+
+Secure File Transmission
+
+Migrated from public file URLs to direct buffer streaming, preventing unauthorized access and reducing security risks.
+
+Robust Validation
+
+Comprehensive frontend and backend validation with meaningful user feedback.
 
 ---
 
 🚀 Getting Started
 
-*1. Clone*
+1. Clone the Repository
+
 git clone https://github.com/mayukhmondal42/healthcare.git
 cd healthcare
 
-*2. Install*
-cd server && npm install
-cd../client && npm install
+2. Install Dependencies
 
-*3..env in server/*
+Backend:
+
+cd server
+npm install
+
+Frontend:
+
+cd client
+npm install
+
+3. Environment Variables
+
+Create a `.env` file inside the server directory:
+
 PORT=5000
-MONGO_URI=your_mongodb_uri
-CLOUDINARY_CLOUD_NAME=xxx
-CLOUDINARY_API_KEY=xxx
-CLOUDINARY_API_SECRET=xxx
-GEMINI_API_KEY=xxx
-JWT_SECRET=xxx
+MONGO_URI=your_mongodb_connection_string
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+GEMINI_API_KEY=your_gemini_api_key
+JWT_SECRET=your_jwt_secret
 
-*4. Run*
-npm run dev (in both server and client)
+4. Start Development Server
+
+Backend:
+
+npm run dev
+
+Frontend:
+
+npm run dev
+
+Live Demo: https://client-tau-rosy-50.vercel.app/
 
 ---
 
-👨‍💻 Author
+🎯 Future Enhancements
 
-*Mayukh Mondal*
-- GitHub: https://github.com/mayukhmondal42
-- Live Demo: https://client-tau-rosy-50.vercel.app/
-- Location: Burdwan, West Bengal, India
+- OCR support for handwritten prescriptions
+- Health trend tracking and analytics
+- Doctor-sharing functionality
+- AI-powered medication explanations
+- Mobile application support
+- Voice-based report summaries
+
+---
+
+👨‍💻 Developer Notes
+
+This project was built to explore the practical application of Generative AI in healthcare workflows while maintaining a secure, scalable, and user-friendly architecture.
+
+Key focus areas:
+
+- AI Integration
+- System Security
+- Performance Optimization
+- Cloud Infrastructure
+- User Experience
+
+*Author:* Mayukh Mondal - https://github.com/mayukhmondal42
+
+---
+
+⭐ Support
+
+If you found this project helpful, consider giving it a star on GitHub.
+
+---
 
 <p align="center">
- <strong>Built with ❤️ by Mayukh Mondal</strong>
+ <strong>Built with ❤️ by Mayukh Mondal for the future of digital healthcare.</strong>
 </p>
+---
+
+Ebar 100% thikthak asbe, ar `ayushmanji` er link ar thakbe na. Just paste kore push kore dao:
+
+git add README.md
+git commit -m "docs: final README with own links"
+git push origin main
